@@ -23,7 +23,7 @@
 
             do
             {
-                Console.Write("Enter a number: ");
+                Console.Write("Enter the pulled number: ");
                 try
                 {
                     selectedNumber = int.Parse(Console.ReadLine());
