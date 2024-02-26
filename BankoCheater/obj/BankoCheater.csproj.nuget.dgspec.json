@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\MAGS\\Documents\\GitHub\\BankoCheater\\BankoCheater.csproj": {}
+    "C:\\Users\\sck\\Documents\\GitHub\\banko-snyd-Sckaletz\\BankoCheater\\BankoCheater.csproj": {}
   },
   "projects": {
-    "C:\\Users\\MAGS\\Documents\\GitHub\\BankoCheater\\BankoCheater.csproj": {
+    "C:\\Users\\sck\\Documents\\GitHub\\banko-snyd-Sckaletz\\BankoCheater\\BankoCheater.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\MAGS\\Documents\\GitHub\\BankoCheater\\BankoCheater.csproj",
+        "projectUniqueName": "C:\\Users\\sck\\Documents\\GitHub\\banko-snyd-Sckaletz\\BankoCheater\\BankoCheater.csproj",
         "projectName": "BankoCheater",
-        "projectPath": "C:\\Users\\MAGS\\Documents\\GitHub\\BankoCheater\\BankoCheater.csproj",
-        "packagesPath": "C:\\Users\\MAGS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\MAGS\\Documents\\GitHub\\BankoCheater\\obj\\",
+        "projectPath": "C:\\Users\\sck\\Documents\\GitHub\\banko-snyd-Sckaletz\\BankoCheater\\BankoCheater.csproj",
+        "packagesPath": "C:\\Users\\sck\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sck\\Documents\\GitHub\\banko-snyd-Sckaletz\\BankoCheater\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\MAGS\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\sck\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
