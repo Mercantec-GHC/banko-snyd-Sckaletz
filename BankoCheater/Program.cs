@@ -4,7 +4,9 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            int[] numbers = { 19, 10, 10, 10, 10 };
+
+            Console.WriteLine(numbers);
         }
     }
 }
