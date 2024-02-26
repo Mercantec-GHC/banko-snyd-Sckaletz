@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BankoCheater")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bde00ed0060f98b420e4d38cc00e977e890510a4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ceb151932098447620d391c89025395a96add27e")]
 [assembly: System.Reflection.AssemblyProductAttribute("BankoCheater")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BankoCheater")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
