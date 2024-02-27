@@ -20,24 +20,28 @@
             // Add Rasmus's rows
             playersRows.Add("Rasmus", new Dictionary<string, int[]>
             {
-                { "Row1", rasmus1Row1 },
-                { "Row2", rasmus1Row2 },
-                { "Row3", rasmus1Row3 }
+                { "Row1Rasmus", rasmus1Row1 },
+                { "Row2Rasmus", rasmus1Row2 },
+                { "Row3Rasmus", rasmus1Row3 }
             });
 
             // Add Allan's rows
             playersRows.Add("Allan", new Dictionary<string, int[]>
             {
-                { "Row1", allan1Row1 },
-                { "Row2", allan1Row2 },
-                { "Row3", allan1Row3 }
+                { "Row1Allan", allan1Row1 },
+                { "Row2Allan", allan1Row2 },
+                { "Row3Allan", allan1Row3 }
             });
 
-            int row1Counter = 0;
-            int row2Counter = 0;
-            int row3Counter = 0;
-            bool fullPlate = false;
+            // Initialize counters for all rows on each plate
+            int row1CounterRasmus = 0;
+            int row2CounterRasmus = 0;
+            int row3CounterRasmus = 0;
+            int row1CounterAllan = 0;
+            int row2CounterAllan = 0;
+            int row3CounterAllan = 0;
 
+            bool fullPlate = false;
 
             do
             {
@@ -52,42 +56,81 @@
                         {
                             if (row.Value.Contains(selectedNumber))
                             {
-                                if (row.Key == "Row1")
+                                // If the numbers are found on Rasmus' plate
+                                if (row.Key == "Row1Rasmus")
                                 {
-                                    row1Counter++;
+                                    row1CounterRasmus++;
                                 }
-                                else if (row.Key == "Row2")
+                                else if (row.Key == "Row2Rasmus")
                                 {
-                                    row2Counter++;
+                                    row2CounterRasmus++;
                                 }
-                                else if (row.Key == "Row3")
+                                else if (row.Key == "Row3Rasmus")
                                 {
-                                    row3Counter++;
+                                    row3CounterRasmus++;
+                                }
+
+                                // if the numbers are found on Allan's plate
+                                if (row.Key == "Row1Allan")
+                                {
+                                    row1CounterAllan++;
+                                }
+                                else if (row.Key == "Row2Allan")
+                                {
+                                    row2CounterAllan++;
+                                }
+                                else if (row.Key == "Row3Allan")
+                                {
+                                    row3CounterAllan++;
                                 }
                             }
                         }
-                        
                     }
 
-                    if (row1Counter == 5)
+                    // Check Rasmus' row count
+                    if (row1CounterRasmus == 5)
                     {
-                        Console.WriteLine("BANKO! Row1");
-                        row1Counter++;
+                        Console.WriteLine("BANKO! Row1 Rasmus");
+                        row1CounterRasmus++;
                     }
 
-                    if (row2Counter == 5)
+                    if (row2CounterRasmus == 5)
                     {
-                        Console.WriteLine("BANKO! Row2");
-                        row2Counter++;
+                        Console.WriteLine("BANKO! Row2 Rasmus");
+                        row2CounterRasmus++;
                     }
 
-                    if (row3Counter == 5)
+                    if (row3CounterRasmus == 5)
                     {
-                        Console.WriteLine("BANKO! Row3");
-                        row3Counter++;
+                        Console.WriteLine("BANKO! Row3 Rasmus");
+                        row3CounterRasmus++;
                     }
 
-                    if (row1Counter == 6 && row2Counter == 6 && row3Counter == 6)
+                    // Check Allan's row count
+                    if (row1CounterAllan == 5)
+                    {
+                        Console.WriteLine("BANKO! Row1 Allan");
+                        row1CounterAllan++;
+                    }
+
+                    if (row2CounterAllan == 5)
+                    {
+                        Console.WriteLine("BANKO! Row2 Allan");
+                        row2CounterAllan++;
+                    }
+
+                    if (row3CounterAllan == 5)
+                    {
+                        Console.WriteLine("BANKO! Row3 Allan");
+                        row3CounterAllan++;
+                    }
+
+                    // Check for full plate on each plate
+                    if (row1CounterRasmus == 6 && row2CounterRasmus == 6 && row3CounterRasmus == 6)
+                    {
+                        fullPlate = true;
+                    }
+                    if (row1CounterAllan == 6 && row2CounterAllan == 6 && row3CounterAllan == 6)
                     {
                         fullPlate = true;
                     }
@@ -96,10 +139,9 @@
                 {
                     Console.WriteLine("Numbers only.");
                 }
-
-
             } while (fullPlate == false);
 
+            // Announce if either has a full plate
             Console.WriteLine("FULL PLATE!");
         }
     }
