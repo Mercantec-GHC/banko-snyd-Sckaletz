@@ -37,11 +37,14 @@
             int row1CounterRasmus = 0;
             int row2CounterRasmus = 0;
             int row3CounterRasmus = 0;
+
             int row1CounterAllan = 0;
             int row2CounterAllan = 0;
             int row3CounterAllan = 0;
 
             bool fullPlate = false;
+            bool rasmusFullPlate = false;
+            bool allanFullPlate = false;
 
             do
             {
@@ -126,11 +129,17 @@
                     }
 
                     // Check for full plate on each plate
-                    if (row1CounterRasmus == 6 && row2CounterRasmus == 6 && row3CounterRasmus == 6)
+                    if (row1CounterRasmus == 6 && row2CounterRasmus == 6 && row3CounterRasmus == 6 && !rasmusFullPlate)
                     {
-                        fullPlate = true;
+                        Console.WriteLine("RASMUS FIK FULD PLADE!");
+                        rasmusFullPlate = true;
                     }
-                    if (row1CounterAllan == 6 && row2CounterAllan == 6 && row3CounterAllan == 6)
+                    if (row1CounterAllan == 6 && row2CounterAllan == 6 && row3CounterAllan == 6 && !allanFullPlate)
+                    {
+                        Console.WriteLine("ALLAN FIK FULD PLADE!");
+                        allanFullPlate = true;
+                    }
+                    if (rasmusFullPlate && allanFullPlate)
                     {
                         fullPlate = true;
                     }
@@ -142,7 +151,7 @@
             } while (fullPlate == false);
 
             // Announce if either has a full plate
-            Console.WriteLine("FULL PLATE!");
+            Console.WriteLine("GAME OVER!");
         }
     }
 }
