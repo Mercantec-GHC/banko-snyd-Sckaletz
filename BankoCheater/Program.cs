@@ -36,13 +36,27 @@
                 { "Row3Allan", CollectRowInput("Allan") }
             });
 
+            HashSet<int> drawnNumbers = new HashSet<int>();
+
             do
             {
                 Console.Write("Enter the pulled number: ");
                 try
                 {
                     int selectedNumber = int.Parse(Console.ReadLine());
+                    if (selectedNumber < 1 || selectedNumber > 90)
+                    {
+                        Console.WriteLine("Only numbers between 1 and 90 are valid");
+                    }
 
+                    if (drawnNumbers.Contains(selectedNumber))
+                    {
+                        Console.WriteLine("You have already drawn this number. Please select a different one.");
+                        continue; // Restart the loop if the number has already been drawn
+                    }
+
+                    drawnNumbers.Add(selectedNumber); // Add the selected number to the set of drawn numbers
+                    
                     foreach (var player in playersRows)
                     {
                         foreach (var row in player.Value)
@@ -83,50 +97,66 @@
                     // Check Rasmus' row count
                     if (row1CounterRasmus == 5)
                     {
+                        Console.WriteLine("------------------");
                         Console.WriteLine("BANKO! Row1 Rasmus");
+                        Console.WriteLine("------------------");
                         row1CounterRasmus++;
                     }
 
                     if (row2CounterRasmus == 5)
                     {
+                        Console.WriteLine("------------------");
                         Console.WriteLine("BANKO! Row2 Rasmus");
+                        Console.WriteLine("------------------");
                         row2CounterRasmus++;
                     }
 
                     if (row3CounterRasmus == 5)
                     {
+                        Console.WriteLine("------------------");
                         Console.WriteLine("BANKO! Row3 Rasmus");
+                        Console.WriteLine("------------------");
                         row3CounterRasmus++;
                     }
 
                     // Check Allan's row count
                     if (row1CounterAllan == 5)
                     {
+                        Console.WriteLine("------------------");
                         Console.WriteLine("BANKO! Row1 Allan");
+                        Console.WriteLine("------------------");
                         row1CounterAllan++;
                     }
 
                     if (row2CounterAllan == 5)
                     {
+                        Console.WriteLine("------------------");
                         Console.WriteLine("BANKO! Row2 Allan");
+                        Console.WriteLine("------------------");
                         row2CounterAllan++;
                     }
 
                     if (row3CounterAllan == 5)
                     {
+                        Console.WriteLine("------------------");
                         Console.WriteLine("BANKO! Row3 Allan");
+                        Console.WriteLine("------------------");
                         row3CounterAllan++;
                     }
 
                     // Check for full plate on each plate
                     if (row1CounterRasmus == 6 && row2CounterRasmus == 6 && row3CounterRasmus == 6 && !rasmusFullPlate)
                     {
+                        Console.WriteLine("----------------------");
                         Console.WriteLine("RASMUS FIK FULD PLADE!");
+                        Console.WriteLine("----------------------");
                         rasmusFullPlate = true;
                     }
                     if (row1CounterAllan == 6 && row2CounterAllan == 6 && row3CounterAllan == 6 && !allanFullPlate)
                     {
+                        Console.WriteLine("---------------------");
                         Console.WriteLine("ALLAN FIK FULD PLADE!");
+                        Console.WriteLine("---------------------");
                         allanFullPlate = true;
                     }
                     if (rasmusFullPlate && allanFullPlate)
@@ -136,7 +166,7 @@
                 }
                 catch (FormatException)
                 {
-                    Console.WriteLine("Numbers only.");
+                    Console.WriteLine("Numbers only!");
                 }
             } while (fullPlate == false);
 
