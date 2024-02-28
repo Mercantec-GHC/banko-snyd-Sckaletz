@@ -4,34 +4,8 @@
     {
         static void Main(string[] args)
         {
-            // Initialize Rasmus's rows
-            int[] rasmus1Row1 = new int[] { 1, 20, 32, 71, 80 };
-            int[] rasmus1Row2 = new int[] { 3, 11, 21, 38, 44 };
-            int[] rasmus1Row3 = new int[] { 15, 29, 49, 58, 68 };
-
-            // Initialize Allan's rows
-            int[] allan1Row1 = new int[] { 2, 19, 31, 70, 81 };
-            int[] allan1Row2 = new int[] { 4, 12, 22, 37, 43 };
-            int[] allan1Row3 = new int[] { 16, 28, 48, 57, 67 };
-
             // Create a dictionary to hold all players' rows
             Dictionary<string, Dictionary<string, int[]>> playersRows = new Dictionary<string, Dictionary<string, int[]>>();
-
-            // Add Rasmus's rows
-            playersRows.Add("Rasmus", new Dictionary<string, int[]>
-            {
-                { "Row1Rasmus", rasmus1Row1 },
-                { "Row2Rasmus", rasmus1Row2 },
-                { "Row3Rasmus", rasmus1Row3 }
-            });
-
-            // Add Allan's rows
-            playersRows.Add("Allan", new Dictionary<string, int[]>
-            {
-                { "Row1Allan", allan1Row1 },
-                { "Row2Allan", allan1Row2 },
-                { "Row3Allan", allan1Row3 }
-            });
 
             // Initialize counters for all rows on each plate
             int row1CounterRasmus = 0;
@@ -45,6 +19,22 @@
             bool fullPlate = false;
             bool rasmusFullPlate = false;
             bool allanFullPlate = false;
+
+            // Collect Rasmus's rows
+            playersRows.Add("Rasmus", new Dictionary<string, int[]>
+            {
+                { "Row1Rasmus", CollectRowInput("Rasmus") },
+                { "Row2Rasmus", CollectRowInput("Rasmus") },
+                { "Row3Rasmus", CollectRowInput("Rasmus") }
+            });
+
+            // Collect Allan's rows
+            playersRows.Add("Allan", new Dictionary<string, int[]>
+            {
+                { "Row1Allan", CollectRowInput("Allan") },
+                { "Row2Allan", CollectRowInput("Allan") },
+                { "Row3Allan", CollectRowInput("Allan") }
+            });
 
             do
             {
@@ -152,6 +142,18 @@
 
             // Announce if either has a full plate
             Console.WriteLine("GAME OVER!");
+        }
+
+        static int[] CollectRowInput(string playerName)
+        {
+            Console.WriteLine($"Please type the numbers for the next row for {playerName}:");
+            int[] rowNumbers = new int[5];
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write($"Number {i + 1}: ");
+                rowNumbers[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            return rowNumbers;
         }
     }
 }
